@@ -1,0 +1,27 @@
+{
+  "key1" : "werthyui",
+  "key2" : "wergtfhgjhkjhg",
+  "key3" : [
+    {
+      "aaa" : "erty",
+      "sss" : "gth"
+    },
+    {
+      "aaa" : "ergh",
+      "sss" : "hyj"
+    },
+    {
+      "aaa" : "jki",
+      "sss" : "vbm"
+    }
+  ],
+  "key4" : [
+    "qwert",
+    "erthyu",
+    "rtyui"
+  ],
+  "key5" : {
+    "eee" : "yujki",
+    "www" : "kloip"
+  }
+}
