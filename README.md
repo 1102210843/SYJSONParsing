@@ -15,7 +15,7 @@
 将模型继承于SYBaseModel类，在文件中添加属性即可
 
 #JSON数据中key为关键字的情况
-如果JSON数据中的key为关键字，那么属性以KW开头，即keyWord首字母，后面接key字段，如下：
+如果JSON数据中的key为关键字，那么属性以KW开头，即keyword，后面接key字段，如下：
 
 @property (nonatomic, strong) NSString *KWdescription;
 
