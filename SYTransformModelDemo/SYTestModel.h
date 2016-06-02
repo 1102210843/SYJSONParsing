@@ -17,7 +17,7 @@
 
 @interface SYTestModel : SYBaseModel
 
-@property (nonatomic, strong) NSString *key1;
+@property (nonatomic, assign) BOOL key1;
 
 @property (nonatomic, strong) NSString *key2;
 
@@ -42,7 +42,7 @@
 
 @interface SYKey5Model : SYBaseModel
 
-@property (nonatomic,  strong) NSString *eee;
+@property (nonatomic,  assign) NSInteger eee;
 
 @property (nonatomic, strong) NSString *www;
 

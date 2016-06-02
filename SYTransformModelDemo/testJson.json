@@ -1,5 +1,5 @@
 {
-  "key1" : "werthyui",
+  "key1" : true,
   "key2" : "wergtfhgjhkjhg",
   "key3" : [
     {
@@ -7,7 +7,7 @@
       "sss" : "gth"
     },
     {
-      "aaa" : "ergh",
+      "aaa" : 678,
       "sss" : "hyj"
     },
     {
@@ -16,12 +16,12 @@
     }
   ],
   "key4" : [
-    "qwert",
+    111,
     "erthyu",
     "rtyui"
   ],
   "key5" : {
-    "eee" : "yujki",
+    "eee" : 2,
     "www" : "kloip"
   }
 }

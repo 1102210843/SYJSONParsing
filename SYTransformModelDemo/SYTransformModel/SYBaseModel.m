@@ -133,7 +133,6 @@ static const char *kIndexPropertyNameKey;
                     
                     [scanner scanString:@">" intoString:NULL];
                 }
-                
             }
             
             NSString *nsPropertyName = @(propertyName);
@@ -193,10 +192,11 @@ static const char *kIndexPropertyNameKey;
             value = [dict objectForKey:[modelDescription.name substringFromIndex:2]];
         }
         
-        
-        NSBundle *mainB = [NSBundle bundleForClass:modelDescription.type];
-        if (mainB == [NSBundle mainBundle]) {
-            value = [[modelDescription.type alloc] initModelTransformModelWithDict:value];
+        if (modelDescription.type && (NSNull *)modelDescription.type != [NSNull null]) {
+            NSBundle *mainB = [NSBundle bundleForClass:modelDescription.type];
+            if (mainB == [NSBundle mainBundle]) {
+                value = [[modelDescription.type alloc] initModelTransformModelWithDict:value];
+            }
         }
         
         if ([modelDescription.type isSubclassOfClass:[NSArray class]]) {
@@ -213,9 +213,19 @@ static const char *kIndexPropertyNameKey;
         }
         
         if (value && (NSNull *)value != [NSNull null]) {
-            [self setValue:value forKey:modelDescription.name];
+            
+            if ([modelDescription.type isSubclassOfClass:[NSString class]]) {
+                [self setValue:[NSString stringWithFormat:@"%@", value] forKey:modelDescription.name];
+
+            }else if ([modelDescription.type isSubclassOfClass:[NSNumber class]] ||
+                      !modelDescription.type){
+                [self setValue:[NSNumber numberWithInteger:[value integerValue]] forKey:modelDescription.name];
+            }else{
+                [self setValue:value forKey:modelDescription.name];
+            }
+            
         }else{
-            //            NSLog(@"%@ <><><><><><><<<<><><<><>< %@", value, key);
+            
         }
     }
 }

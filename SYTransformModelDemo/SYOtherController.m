@@ -31,7 +31,7 @@
     //数据转换model
     SYTestModel *model = [[SYTestModel alloc]initModelTransformModelWithData:data];
     
-    NSLog(@"%@", model.key1);
+    NSLog(@"%d", model.key1);
     
     NSLog(@"%@", model.key2);
     
@@ -44,6 +44,8 @@
     NSLog(@"%@", model.key4);
     
     NSLog(@"%@", model.key5);
+    
+    NSLog(@"%ld", model.key5.eee);
     
     NSLog(@"%@", model.key5.www);
     
